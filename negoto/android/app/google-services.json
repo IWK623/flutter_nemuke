@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "136510526162",
+    "project_id": "negoto-6e1f8",
+    "storage_bucket": "negoto-6e1f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136510526162:android:5815f2fe264ecdd77e130b",
+        "android_client_info": {
+          "package_name": "com.wamteam.negoto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136510526162-b826uoc2k8lludsul2ja91ghjgb24nn6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBObk_7ppFKy_PuYgXpiHc2mCd_rPKALGU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136510526162-b826uoc2k8lludsul2ja91ghjgb24nn6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "136510526162-grh5eh7eq8f50icl5o7usuna1t16ife6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.wamteam.negoto"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
