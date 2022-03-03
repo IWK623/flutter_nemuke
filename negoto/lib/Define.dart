@@ -6,6 +6,7 @@ class AssetColor {
 
   static const Color textColorBtn = Color(0xffdeffe4);
   static const Color textColorLight = Color(0xffb1ccb6);
+  static const Color textColorDark = Color(0xff2C332E);
 }
 
 class AssetStyle {
@@ -18,8 +19,19 @@ class AssetStyle {
         decoration: TextDecoration.none);
   }
 
-  static late TextStyle textStyle1 = textStyle(AssetColor.textColorLight, 12);
-  static late TextStyle textStyle2 = textStyle(AssetColor.textColorLight, 16);
+  static late TextStyle textStyle1 = const TextStyle(
+      color: AssetColor.textColorLight,
+      fontSize: 12,
+      fontWeight: FontWeight.bold,
+      fontStyle: FontStyle.normal,
+      decoration: TextDecoration.none);
+
+  static late TextStyle textStyle2 = const TextStyle(
+      color: AssetColor.textColorLight,
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      fontStyle: FontStyle.normal,
+      decoration: TextDecoration.none);
 
   static late TextStyle textStyleBtn1 = const TextStyle(
       color: AssetColor.textColorBtn,
@@ -32,7 +44,23 @@ class AssetStyle {
       color: AssetColor.textColorBtn,
       fontSize: 12,
       // fontWeight: FontWeight.bold,
-      height: 2,
+      // height: 2,
+      fontStyle: FontStyle.normal,
+      decoration: TextDecoration.none);
+
+  static late TextStyle textStyleMsg1 = const TextStyle(
+      color: AssetColor.textColorDark,
+      fontSize: 12,
+      fontWeight: FontWeight.bold,
+      // height: 2,
+      fontStyle: FontStyle.normal,
+      decoration: TextDecoration.none);
+
+  static late TextStyle textStyleMsg2 = const TextStyle(
+      color: AssetColor.textColorLight,
+      fontSize: 12,
+      fontWeight: FontWeight.bold,
+      // height: 2,
       fontStyle: FontStyle.normal,
       decoration: TextDecoration.none);
 }
