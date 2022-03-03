@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "negoto",
-            "cwd": "negoto",
+            // "cwd": "negoto",
             "request": "launch",
             "type": "dart"
         },
