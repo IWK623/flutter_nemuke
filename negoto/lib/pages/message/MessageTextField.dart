@@ -17,13 +17,13 @@ class _MessageTextField extends State<MessageTextField> {
   @override
   void initState() {
     super.initState();
-    _textController = TextEditingController(text: 'initial text');
+    _textController = TextEditingController(text: 'メッセージを入力');
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(24, 12, 24, 12),
+      padding: const EdgeInsets.fromLTRB(0, 12, 0, 12),
       child: CupertinoTextField(
         controller: _textController,
         decoration: BoxDecoration(
@@ -41,7 +41,7 @@ class _MessageTextField extends State<MessageTextField> {
           padding: const EdgeInsets.only(right: 12),
           child: const Icon(
             CupertinoIcons.arrow_up_circle_fill,
-            color: AssetColor.textColorBtn,
+            color: AssetColor.textColorLight,
             size: 28,
           ),
         ),
