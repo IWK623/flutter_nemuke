@@ -27,4 +27,12 @@ class AssetStyle {
       fontWeight: FontWeight.bold,
       fontStyle: FontStyle.normal,
       decoration: TextDecoration.none);
+
+  static late TextStyle textStyleInput1 = const TextStyle(
+      color: AssetColor.textColorBtn,
+      fontSize: 12,
+      // fontWeight: FontWeight.bold,
+      height: 2,
+      fontStyle: FontStyle.normal,
+      decoration: TextDecoration.none);
 }

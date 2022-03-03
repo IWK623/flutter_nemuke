@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:negoto/pages/message/Header.dart';
+import 'package:negoto/pages/message/MessageTextField.dart';
 
 import '../../Define.dart';
 import '../../widgets/Screen.dart';
@@ -12,7 +13,7 @@ class Message extends StatelessWidget {
     return Screen(
       Column(
         mainAxisSize: MainAxisSize.min,
-        children: [const Header()],
+        children: const [Header(), MessageTextField()],
       ),
       color: AssetColor.backColorLight,
     );
