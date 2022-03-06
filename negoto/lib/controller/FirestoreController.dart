@@ -9,7 +9,7 @@ class FirestoreMessageController {
     collection = firestore.collection('messages');
   }
 
-  void FirestoreGetMessage() {
+  void FirestoreAddMessage() {
     collection
         .add({
           'body': 'development msg',
