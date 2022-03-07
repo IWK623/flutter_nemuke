@@ -21,7 +21,7 @@ class AssetStyle {
 
   static late TextStyle textStyle1 = const TextStyle(
       color: AssetColor.textColorLight,
-      fontSize: 12,
+      fontSize: 14,
       fontWeight: FontWeight.bold,
       fontStyle: FontStyle.normal,
       decoration: TextDecoration.none);
@@ -35,14 +35,14 @@ class AssetStyle {
 
   static late TextStyle textStyleBtn1 = const TextStyle(
       color: AssetColor.textColorBtn,
-      fontSize: 12,
+      fontSize: 14,
       fontWeight: FontWeight.bold,
       fontStyle: FontStyle.normal,
       decoration: TextDecoration.none);
 
   static late TextStyle textStyleInput1 = const TextStyle(
       color: AssetColor.textColorBtn,
-      fontSize: 12,
+      fontSize: 14,
       // fontWeight: FontWeight.bold,
       // height: 2,
       fontStyle: FontStyle.normal,
@@ -50,7 +50,7 @@ class AssetStyle {
 
   static late TextStyle textStyleMsg1 = const TextStyle(
       color: AssetColor.textColorDark,
-      fontSize: 12,
+      fontSize: 14,
       fontWeight: FontWeight.bold,
       // height: 2,
       fontStyle: FontStyle.normal,
@@ -58,7 +58,7 @@ class AssetStyle {
 
   static late TextStyle textStyleMsg2 = const TextStyle(
       color: AssetColor.textColorLight,
-      fontSize: 12,
+      fontSize: 14,
       fontWeight: FontWeight.bold,
       // height: 2,
       fontStyle: FontStyle.normal,
