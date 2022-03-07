@@ -3,8 +3,8 @@ import 'package:negoto/define.dart';
 import 'package:negoto/widgets/ui/SimpleLabel.dart';
 import 'package:negoto/widgets/ui/SimpleTextButton.dart';
 
-class Header extends StatelessWidget {
-  const Header({Key? key}) : super(key: key);
+class ChatRoomHeader extends StatelessWidget {
+  const ChatRoomHeader({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

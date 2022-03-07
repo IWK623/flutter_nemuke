@@ -3,15 +3,13 @@ import 'package:negoto/Define.dart';
 
 class MessageBubble extends StatelessWidget {
   final String message;
-  bool _isMe = false;
+  final bool _isMe = false;
 
-  MessageBubble(
+  const MessageBubble(
     this.message, {
     Key? key,
-    bool? isMe,
-  }) : super(key: key) {
-    if (isMe != null) _isMe = isMe;
-  }
+    required bool isMe,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
