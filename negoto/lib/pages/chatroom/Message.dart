@@ -1,5 +1,8 @@
-class Message {
-  final String context;
+import 'package:flutter/material.dart';
 
-  Message(this.context);
+class Message {
+  final String body;
+  final Key? key;
+
+  Message(this.body, {this.key});
 }

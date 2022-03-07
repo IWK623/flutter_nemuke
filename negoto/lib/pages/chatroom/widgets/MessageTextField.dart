@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:negoto/Define.dart';
-import 'package:negoto/controller/FirestoreController.dart';
-import 'package:negoto/pages/chatroom/ChatRoomContoroller.dart';
+import 'package:negoto/pages/chatroom/Message.dart';
+import 'package:negoto/pages/chatroom/controllers/ChatRoomContoroller.dart';
 
 class MessageTextField extends StatefulWidget {
   final ChatRoomController controller;
@@ -27,15 +27,15 @@ class _MessageTextField extends State<MessageTextField> {
   void _sendMessage() {
     if (canSend) {
       // ignore: avoid_print
-      print(widget.controller.textController.text);
-      var firestore = FirestoreMessageController();
-      firestore.FirestoreAddMessage();
+      // var firestore = FirestoreMessageController();
+      // firestore.FirestoreAddMessage();
+      widget.controller
+          .sendMessage(Message(widget.controller.textController.text));
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    var scrollController = widget.controller.scrollController;
     return Container(
       padding: const EdgeInsets.fromLTRB(0, 12, 0, 12),
       child: CupertinoTextField(
@@ -56,6 +56,7 @@ class _MessageTextField extends State<MessageTextField> {
             AssetStyle.textStyleInput1.fontSize!),
         maxLength: 60,
         suffix: IconButton(
+          padding: const EdgeInsets.only(right: 12),
           icon: Icon(
             CupertinoIcons.arrow_up_circle_fill,
             color:
@@ -65,11 +66,7 @@ class _MessageTextField extends State<MessageTextField> {
           onPressed: _sendMessage,
         ),
         onChanged: _onChanged,
-        onTap: () => {
-          scrollController.animateTo(scrollController.position.maxScrollExtent,
-              curve: Curves.easeOut,
-              duration: const Duration(milliseconds: 300))
-        },
+        onTap: () => {widget.controller.scrollBottom()},
       ),
     );
   }

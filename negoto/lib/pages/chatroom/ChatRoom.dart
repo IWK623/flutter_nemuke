@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:negoto/pages/chatroom/widgets/ChatRoomHeader.dart';
-import 'package:negoto/pages/chatroom/ChatRoomContoroller.dart';
+import 'package:negoto/pages/chatroom/controllers/ChatRoomContoroller.dart';
 import 'package:negoto/pages/chatroom/widgets/MessageList.dart';
 import 'package:negoto/pages/chatroom/widgets/MessageTextField.dart';
 
 import '../../Define.dart';
 import '../../widgets/Screen.dart';
 
-class Message extends StatefulWidget {
-  const Message({Key? key}) : super(key: key);
+class ChatRoom extends StatefulWidget {
+  const ChatRoom({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
-    return _Message();
+    return _ChatRoom();
   }
 }
 
-class _Message extends State<Message> {
+class _ChatRoom extends State<ChatRoom> {
   late ChatRoomController _messageController;
 
   @override

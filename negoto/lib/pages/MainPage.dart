@@ -12,7 +12,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     void openMessage() => {
           Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-            return const Scaffold(body: Message());
+            return const Scaffold(body: ChatRoom());
           }))
         };
 
