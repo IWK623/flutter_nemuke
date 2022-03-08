@@ -2,7 +2,20 @@ import 'package:flutter/material.dart';
 
 class Message {
   final String body;
-  final Key? key;
+  DateTime? published;
+  Key? key;
+  bool? isMe = false;
 
-  Message(this.body, {this.key});
+  Message(this.body, {this.published, this.key});
+
+  @override
+  bool operator ==(m) {
+    if (m is! Message) {
+      return false;
+    } else if (m.key == null || key == null) {
+      return false;
+    } else {
+      return m.key == key;
+    }
+  }
 }

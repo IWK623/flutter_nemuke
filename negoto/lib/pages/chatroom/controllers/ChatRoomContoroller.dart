@@ -1,25 +1,25 @@
+import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
 import 'package:negoto/pages/chatroom/Message.dart';
 import 'package:negoto/pages/chatroom/controllers/MessageListController.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ChatRoomController {
+  late FirebaseFirestore firestore;
+  late CollectionReference collection;
+
   ScrollController scrollController = ScrollController();
   TextEditingController textController = TextEditingController();
-
   late MessageListController messageListController =
       MessageListController(this);
 
-  ChatRoomController() {
-    messageListController.fetchMessages();
-    scrollController.addListener(() {
-      scrollBottom();
-    });
-  }
+  final String uuid = UniqueKey().toString();
 
-  void sendMessage(Message message) {
-    messageListController.sendMessage(message);
-    scrollBottom();
-    textController.text = "";
+  ChatRoomController() {
+    firestore = FirebaseFirestore.instance;
+    collection = firestore.collection('messages');
+    loadMessage(10);
   }
 
   void scrollBottom() {
@@ -29,5 +29,46 @@ class ChatRoomController {
           curve: Curves.easeOut,
           duration: const Duration(milliseconds: 300));
     }
+  }
+
+  void sendMessage(Message message) {
+    collection.add({
+      'body': message.body,
+      'published': DateTime.now(),
+    }).then((doc) {
+      message.key = Key(doc.id);
+      message.isMe = true;
+      message.published = DateTime.now();
+      messageListController.addMessage(message);
+    });
+    // .catchError((error) => print("$error"));
+    scrollBottom();
+    textController.text = "";
+  }
+
+  static DateTime parseTime(dynamic date) {
+    return date is Timestamp ? (date).toDate() : (date as DateTime);
+  }
+
+  static Message getMessageFromDoc(DocumentSnapshot<Object?> doc) {
+    return Message(
+      doc.data().toString().contains('body') ? doc.get('body') : '',
+      published: parseTime(doc.get("published")),
+      key: Key(doc.id),
+    );
+  }
+
+  void loadMessage(int last) {
+    collection
+        .orderBy('published')
+        .limitToLast(last)
+        .snapshots()
+        .listen((event) {
+      for (var dc in event.docChanges) {
+        print(dc.doc.get("published"));
+        messageListController
+            .addMessage(getMessageFromDoc(dc.doc)..isMe = false);
+      }
+    });
   }
 }

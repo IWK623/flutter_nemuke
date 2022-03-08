@@ -25,8 +25,8 @@ class MessageList extends StatelessWidget {
               const EdgeInsets.only(left: 24, right: 24, top: 64, bottom: 64),
           itemCount: controller.getLength(),
           itemBuilder: (c, i) => MessageBubble(
-            controller.messages[i].body,
-            isMe: false,
+            controller.messages[i],
+            isMe: controller.messages[i].isMe ?? false,
             key: controller.messages[i].key,
           ),
         );
