@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:negoto/pages/chatroom/Message.dart';
+import 'package:negoto/pages/chatroom/model/Message.dart';
 import 'package:negoto/pages/chatroom/controllers/ChatRoomContoroller.dart';
 
 class MessageListController extends ChangeNotifier {

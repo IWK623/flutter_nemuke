@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:negoto/pages/chatroom/Message.dart';
+import 'package:negoto/pages/chatroom/model/Message.dart';
 import 'package:negoto/pages/chatroom/controllers/ChatRoomContoroller.dart';
 import 'package:negoto/pages/chatroom/controllers/MessageListController.dart';
 import 'package:negoto/pages/chatroom/widgets/MessageBubble.dart';
@@ -26,7 +26,7 @@ class MessageList extends StatelessWidget {
           itemCount: controller.getLength(),
           itemBuilder: (c, i) => MessageBubble(
             controller.messages[i],
-            isMe: controller.messages[i].isMe ?? false,
+            controller.messages[i].isMe ?? true,
             key: controller.messages[i].key,
           ),
         );

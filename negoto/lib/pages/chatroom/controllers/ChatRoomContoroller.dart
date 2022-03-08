@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 import 'package:flutter/material.dart';
-import 'package:negoto/pages/chatroom/Message.dart';
+import 'package:negoto/pages/chatroom/model/Message.dart';
 import 'package:negoto/pages/chatroom/controllers/MessageListController.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 

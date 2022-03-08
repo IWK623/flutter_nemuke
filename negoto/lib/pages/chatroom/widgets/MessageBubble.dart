@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:negoto/Define.dart';
-import 'package:negoto/pages/chatroom/Message.dart';
+import 'package:negoto/pages/chatroom/model/Message.dart';
 
 class MessageBubble extends StatelessWidget {
   final Message message;
-  final bool isMe = false;
+  final bool isMe;
 
   const MessageBubble(
-    this.message, {
+    this.message,
+    this.isMe, {
     Key? key,
-    required bool isMe,
   }) : super(key: key);
 
   String getTimeText() {
