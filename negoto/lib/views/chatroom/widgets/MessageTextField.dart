@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:negoto/Define.dart';
-import 'package:negoto/pages/chatroom/model/Message.dart';
-import 'package:negoto/pages/chatroom/controllers/ChatRoomContoroller.dart';
+import 'package:negoto/models/chat/MessageModel.dart';
+import 'package:negoto/controllers/chatroom/ChatRoomController.dart';
 
 class MessageTextField extends StatefulWidget {
   final ChatRoomController controller;

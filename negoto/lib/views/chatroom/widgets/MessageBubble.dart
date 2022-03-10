@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:negoto/Define.dart';
-import 'package:negoto/pages/chatroom/model/Message.dart';
+import 'package:negoto/models/chat/MessageModel.dart';
 
 class MessageBubble extends StatelessWidget {
   final Message message;

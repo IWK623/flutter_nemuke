@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:negoto/pages/chatroom/widgets/ChatRoomHeader.dart';
-import 'package:negoto/pages/chatroom/controllers/ChatRoomContoroller.dart';
-import 'package:negoto/pages/chatroom/widgets/MessageList.dart';
-import 'package:negoto/pages/chatroom/widgets/MessageTextField.dart';
+import 'package:negoto/views/chatroom/widgets/ChatRoomHeader.dart';
+import 'package:negoto/controllers/chatroom/ChatRoomController.dart';
+import 'package:negoto/views/chatroom/widgets/MessageList.dart';
+import 'package:negoto/views/chatroom/widgets/MessageTextField.dart';
 
 import '../../Define.dart';
 import '../../widgets/Screen.dart';

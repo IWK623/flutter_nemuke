@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:negoto/Define.dart';
-import 'package:negoto/pages/chatroom/ChatRoom.dart';
+import 'package:negoto/views/chatroom/ChatRoom.dart';
 import 'package:negoto/widgets/Screen.dart';
 import 'package:negoto/widgets/ui/SimpleLabel.dart';
 import 'package:negoto/widgets/ui/SimpleTextButton.dart';

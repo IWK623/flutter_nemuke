@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:negoto/pages/chatroom/model/Message.dart';
-import 'package:negoto/pages/chatroom/controllers/ChatRoomContoroller.dart';
-import 'package:negoto/pages/chatroom/controllers/MessageListController.dart';
-import 'package:negoto/pages/chatroom/widgets/MessageBubble.dart';
+import 'package:negoto/controllers/chatroom/MessageListController.dart';
+import 'package:negoto/models/chat/MessageModel.dart';
+import 'package:negoto/controllers/chatroom/ChatRoomController.dart';
+import 'package:negoto/views/chatroom/widgets/MessageBubble.dart';
 import 'package:provider/provider.dart';
 
 class MessageList extends StatelessWidget {
