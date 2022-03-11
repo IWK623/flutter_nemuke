@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:negoto/Define.dart';
+import 'package:negoto/models/user/UserModel.dart';
 import 'package:negoto/views/chatroom/ChatRoom.dart';
 import 'package:negoto/widgets/Screen.dart';
 import 'package:negoto/widgets/ui/SimpleLabel.dart';
 import 'package:negoto/widgets/ui/SimpleTextButton.dart';
+import 'package:platform_device_id/platform_device_id.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
+
+  Future<UserModel> asyncUserInit() async {
+    String? deviceId = await PlatformDeviceId.getDeviceId;
+    UserModel user = new UserModel(DateTime.now(), deviceId);
+    return user;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +27,15 @@ class MainPage extends StatelessWidget {
     return Screen(
       Center(
           child: Column(mainAxisSize: MainAxisSize.min, children: [
+        FutureBuilder(
+            future: asyncUserInit(),
+            builder: (BuildContext context, AsyncSnapshot<UserModel> snap) {
+              if (snap.hasData) {
+                return Text('${snap.data?.deviceId}');
+              } else {
+                return Text('async');
+              }
+            }),
         SimpleLabel("寝る準備はできましたか？", AssetStyle.textStyle1),
         SimpleTextButton("メッセージを開く", openMessage),
       ])),

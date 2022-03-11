@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:negoto/models/user/UserModel.dart';
 import 'package:negoto/views/mainpage/MainPage.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:platform_device_id/platform_device_id.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -13,7 +15,6 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {

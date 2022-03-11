@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 import 'package:flutter/material.dart';
 import 'package:negoto/models/chat/MessageModel.dart';
 import 'package:negoto/controllers/chatroom/MessageListController.dart';
@@ -65,7 +63,6 @@ class ChatRoomController {
         .snapshots()
         .listen((event) {
       for (var dc in event.docChanges) {
-        print(dc.doc.get("published"));
         messageListController
             .addMessage(getMessageFromDoc(dc.doc)..isMe = false);
       }
