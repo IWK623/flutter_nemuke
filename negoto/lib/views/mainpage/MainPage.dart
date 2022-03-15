@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:negoto/Define.dart';
 import 'package:negoto/models/user/UserModel.dart';
@@ -13,6 +14,15 @@ class MainPage extends StatelessWidget {
   Future<UserModel> asyncUserInit() async {
     String? deviceId = await PlatformDeviceId.getDeviceId;
     UserModel user = new UserModel(DateTime.now(), deviceId);
+    var usersRef = FirebaseFirestore.instance.collection('users');
+    var userExists =
+        usersRef.doc(deviceId).get().then((DocumentSnapshot document) {
+      if (!document.exists) {
+        usersRef.doc(deviceId).set(
+            {'lastActiveTime': user.lastActiveTime, 'deviceId': user.deviceId});
+      }
+    });
+
     return user;
   }
 
