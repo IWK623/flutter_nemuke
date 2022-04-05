@@ -46,7 +46,7 @@ class ChatRoomHeader extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         SimpleLabel(
-                            controller.getMessage(), AssetStyle.textStyle2),
+                            controller.getTime(), AssetStyle.textStyle2),
                         SimpleLabel("分", AssetStyle.textStyle1),
                       ],
                     ),

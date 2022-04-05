@@ -21,6 +21,7 @@ class ChatRoomController {
     firestore = FirebaseFirestore.instance;
     collection = firestore.collection('messages');
     loadMessage(10);
+    chatRoomHeaderController.startTimer();
   }
 
   void scrollBottom() {
