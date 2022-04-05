@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:negoto/controllers/chatroom/ChatRoomHeaderController.dart';
 import 'package:negoto/views/chatroom/widgets/ChatRoomHeader.dart';
 import 'package:negoto/controllers/chatroom/ChatRoomController.dart';
 import 'package:negoto/views/chatroom/widgets/MessageList.dart';
@@ -37,7 +38,7 @@ class _ChatRoom extends State<ChatRoom> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const ChatRoomHeader(),
+                  ChatRoomHeader(_messageController),
                   MessageList(_messageController)
                 ],
               ),

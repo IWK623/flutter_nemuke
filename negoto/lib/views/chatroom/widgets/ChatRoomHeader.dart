@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:negoto/controllers/chatroom/ChatRoomController.dart';
+import 'package:negoto/controllers/chatroom/ChatRoomHeaderController.dart';
 import 'package:negoto/define.dart';
 import 'package:negoto/widgets/ui/SimpleLabel.dart';
 import 'package:negoto/widgets/ui/SimpleTextButton.dart';
+import 'package:provider/provider.dart';
 
 class ChatRoomHeader extends StatelessWidget {
-  const ChatRoomHeader({Key? key}) : super(key: key);
+  final ChatRoomController controller;
+  const ChatRoomHeader(this.controller, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,31 +31,38 @@ class ChatRoomHeader extends StatelessWidget {
         ],
         color: AssetColor.backColorDark,
       ),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(
-              width: double.infinity,
-              child: Center(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
+      child: ChangeNotifierProvider<ChatRoomHeaderController>(
+        create: (_) => controller.chatRoomHeaderController,
+        builder: (a, b) => Consumer<ChatRoomHeaderController>(
+            builder: (context, controller, child) {
+          return Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(
+                  width: double.infinity,
+                  child: Center(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SimpleLabel(
+                            controller.getMessage(), AssetStyle.textStyle2),
+                        SimpleLabel("分", AssetStyle.textStyle1),
+                      ],
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                Column(
                   children: [
-                    SimpleLabel("15", AssetStyle.textStyle2),
-                    SimpleLabel("分", AssetStyle.textStyle1),
+                    SimpleLabel("そろそろ寝ませんか?", AssetStyle.textStyle1),
+                    SimpleTextButton("閉じて寝る", closeMessage)
                   ],
                 ),
-              ),
-            ),
-            const Spacer(),
-            Column(
-              children: [
-                SimpleLabel("そろそろ寝ませんか?", AssetStyle.textStyle1),
-                SimpleTextButton("閉じて寝る", closeMessage)
               ],
             ),
-          ],
-        ),
+          );
+        }),
       ),
     );
   }

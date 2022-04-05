@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:negoto/controllers/chatroom/ChatRoomHeaderController.dart';
 import 'package:negoto/models/chat/MessageModel.dart';
 import 'package:negoto/controllers/chatroom/MessageListController.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -11,6 +12,8 @@ class ChatRoomController {
   TextEditingController textController = TextEditingController();
   late MessageListController messageListController =
       MessageListController(this);
+  late ChatRoomHeaderController chatRoomHeaderController =
+      ChatRoomHeaderController(this);
 
   final String uuid = UniqueKey().toString();
 
